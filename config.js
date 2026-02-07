@@ -7,7 +7,7 @@ window.LINKHUB = {
     chips: ["Informática", "Educação", "Robótica", "IA", "Projetos escolares"],
     primaryCta: { label: "Meu site", url: "https://prof-robinson.blogspot.com/" },
     footerText: "© " + new Date().getFullYear() + " Robinson Webber",
-    bannerLine1: "Prof: Robinson",
+    bannerLine1: "Prof. Robinson",
     bannerLine2: "Informática",
   },
 
@@ -42,3 +42,4 @@ window.LINKHUB = {
     }
   ]
 };
+
