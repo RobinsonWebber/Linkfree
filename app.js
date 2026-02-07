@@ -132,11 +132,23 @@
     (sec.links || []).forEach((l) => {
       if (!l.url) return;
 
-      const a = document.createElement("a");
+      /*const a = document.createElement("a"); 
       a.className = "link";
       a.href = l.url;
       a.target = "_blank";
-      a.rel = "noopener";
+      a.rel = "noopener"; */
+      const a = document.createElement("a");
+        a.className = "link";
+        a.href = l.url;
+        
+        const isVcf = /\.vcf(\?|#|$)/i.test(l.url);
+        
+        if (!isVcf) {
+          a.target = "_blank";
+          a.rel = "noopener";
+        } else {
+          a.target = "_self";
+        }
 
       const left = document.createElement("div");
       left.className = "link-left";
@@ -192,3 +204,4 @@
     sectionsWrap.appendChild(block);
   });
 })();
+
