@@ -96,10 +96,10 @@ body{
 .avatar{
   width: 150px;
   height: 150px;
-  object-fit: contain;
-  border-radius: 22px;
-  border: none;
-  background: transparent;
+  object-fit: cover;     /* importante */
+  border-radius: 50%;    /* deixa redondo */
+  border: 4px solid white; /* opcional: aro branco bonito */
+  background: #fff;
 }
 
 /* Faixa de título (Prof / Informática) */
