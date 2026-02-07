@@ -1,18 +1,12 @@
-{ box-sizing: border-box; }
-html, body { width: 100%; margin: 0; padding: 0; }
-img { max-width: 100%; height: auto; display: block; }
-
+/* ===== Base / Reset ===== */
 :root{
-  /* Base igual ao banner */
   --bg: #dff3ff;
   --bg2:#cfeaff;
 
-  /* Degradês do topo/rodapé (azul forte -> azul mais claro) */
   --blueA:#0a78c6;
   --blueB:#03a8df;
   --blueC:#2bb9ea;
 
-  /* Textos */
   --text:#0b1b2b;
   --muted:#3b4a59;
 
@@ -23,31 +17,30 @@ img { max-width: 100%; height: auto; display: block; }
   --radius: 22px;
 }
 
-*{box-sizing:border-box}
-/*html,body{height:100%}*/
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
+*{ box-sizing:border-box; }
+html, body{ width:100%; margin:0; padding:0; }
+img, svg, video, iframe{ max-width:100%; height:auto; display:block; }
+html, body{ overflow-x: clip; } /* evita scroll lateral no mobile */
 
 body{
-  margin:0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
   background: linear-gradient(180deg, var(--bg), var(--bg2));
-  overflow-x:hidden;
 }
 
-/* some com glow antigo */
+/* ===== Topbar ===== */
 .bg-blur{ display:none; }
 
-/* Topbar (se tu estiver usando o botão tema) */
 .topbar{
-  position:sticky; top:0; z-index:10;
-  display:flex; justify-content:flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
   padding: 12px 16px;
   background: transparent;
 }
+
 .iconbtn{
   width:44px;height:44px;
   border-radius: 14px;
@@ -57,7 +50,7 @@ body{
   cursor:pointer;
 }
 
-/* Wrapper */
+/* ===== Layout wrapper ===== */
 .wrap{
   width: 100%;
   max-width: 520px;
@@ -65,14 +58,21 @@ body{
   padding: 0 14px 32px;
 }
 
-/* HERO vira o “cartaz” */
+/* ===== Cards ===== */
+.card{
+  width: 100%;
+  max-width: 100%;
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(10,120,198,.14);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden; /* corta qualquer coisa que tente vazar */
+}
+
+/* ===== HERO ===== */
 .hero{
   margin-top: 16px;
   padding: 0;
-  overflow:hidden;
-  border-radius: 26px;
-  border: 1px solid var(--stroke);
-  box-shadow: var(--shadow);
   background: rgba(255,255,255,.85);
 }
 
@@ -84,63 +84,30 @@ body{
   background: linear-gradient(90deg, var(--blueA), var(--blueB), var(--blueC));
 }
 
-/* Onda branca (como na imagem) 
-.hero::after{
-  content:"";
-  display:block;
-  width: 100%;
-  height: 6px;
-  margin: 0 0 6px;
-  border-radius: 0 0 20px 20px;
-*/
-.hero::after{
-  display:none;
-}
- /*
-  background: linear-gradient(
-    90deg,
-    rgba(10,120,198,.15),
-    rgba(10,120,198,.55),
-    rgba(10,120,198,.15)
-  );
-}
-
-
-
-
- Conteúdo interno do hero */
-.hero-left, .hero-right{ padding: 10px 18px 16px; }
+/* Conteúdo do hero (logo + título) */
 .hero-left{
-  display:flex;
-  justify-content:center;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 16px 18px;
 }
 
-/* Logo acima, centralizado */
 .avatar{
   width: 150px;
   height: 150px;
   object-fit: contain;
   border-radius: 22px;
-  background: transparent;
   border: none;
+  background: transparent;
 }
-
-/* Esconde nome/bio padrão se tu usar o “banner title” abaixo */
-.name-row{ display:none; }
-.bio{ display:none; }
-.chips{ display:none; }
-.cta-row{ display:none; }
 
 /* Faixa de título (Prof / Informática) */
 .banner-title{
-  padding: 24px 18px 26px;
-  text-align:center;
-  background: transparent;
+  padding: 6px 0;
+  text-align: center;
 }
 
-/* “Prof: Robinson” */
 .banner-title .line1{
   margin:0;
   font-weight: 900;
@@ -150,7 +117,6 @@ body{
   text-shadow: 0 2px 0 rgba(255,255,255,.75);
 }
 
-/* “Informática” em branco com faixa degradê */
 .banner-title .line2{
   margin: 10px auto 0;
   display:inline-block;
@@ -164,21 +130,22 @@ body{
   letter-spacing: -0.02em;
 }
 
-/* Seções e links continuam abaixo, estilo “institucional” */
+/* Esconde elementos “padrão” */
+.hero-right,
+.name-row,
+.bio,
+.chips,
+.cta-row{ display:none; }
+
+/* ===== Sections ===== */
 section#sections{
   margin-top: 14px;
-  display:grid;
+  display: grid;
   gap: 14px;
 }
 
-.card{
-  background: rgba(255,255,255,.82);
-  border: 1px solid rgba(10,120,198,.14);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
 .block{ padding: 16px; }
+
 .block h2{
   margin:0 0 10px;
   font-size: 12px;
@@ -202,9 +169,18 @@ section#sections{
   color: var(--text);
   box-shadow: 0 10px 22px rgba(10, 70, 140, .10);
   transition: transform .08s ease;
+  max-width: 100%;
 }
+
 .link:hover{ transform: translateY(-1px); }
-.link-left{ display:flex; align-items:center; gap:12px; min-width:0; }
+
+.link-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0; /* permite o texto encolher */
+  flex: 1;
+}
 
 .ico{
   width: 42px; height: 42px;
@@ -212,7 +188,13 @@ section#sections{
   display:grid; place-items:center;
   border: 1px solid rgba(10,120,198,.18);
   background: rgba(10,120,198,.10);
+  color:#0a78c6;
+  flex: 0 0 auto;
 }
+
+.ico svg{ width:22px; height:22px; }
+
+.texts{ min-width:0; flex: 1; }
 
 .title{ font-weight: 900; }
 .subtitle{
@@ -220,16 +202,13 @@ section#sections{
   color: rgba(11,27,43,.65);
   margin-top: 2px;
 }
-.texts{ min-width:0; }
-.link-left { min-width: 0; }   /* tu já tem, ótimo */
-.texts { min-width: 0; flex: 1; }  /* ADICIONA flex:1 */
 
-.texts .title, 
+.texts .title,
 .texts .subtitle{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;   /* em vez de 62vw */
+  max-width: 100%;
 }
 
 .pill{
@@ -239,9 +218,10 @@ section#sections{
   border: 1px solid rgba(10,120,198,.20);
   background: rgba(10,120,198,.08);
   color: var(--blueA);
+  flex: 0 0 auto;
 }
 
-/* Rodapé com faixa inferior degradê */
+/* ===== Footer ===== */
 .footer{
   margin-top: 18px;
   text-align:center;
@@ -259,37 +239,24 @@ section#sections{
   background: linear-gradient(90deg, var(--blueA), var(--blueB), var(--blueC));
   z-index: -1;
   box-shadow: 0 -10px 30px rgba(0,0,0,.18);
+  pointer-events: none;
 }
 
-
-
-.ico svg{
-  width: 22px;
-  height: 22px;
-}
-.ico{
-  color: #0a78c6; /* cor padrão */
-}
-.ico svg path{ fill: currentColor; }
-
-/* Cores especiais por “fundo” (fica bonito e consistente) */
-.link .ico{ color:#0a78c6; }
-
-.ico svg{ width:22px; height:22px; display:block; }
-
-.ico svg path{ fill: currentColor; }
-.wrap,
-.hero,
-.card,
-section#sections,
-.block {
-  max-width: 100%;
-}
-/* { outline: 1px solid rgba(255,0,0,.35); } */
-
-.hero { height: auto !important; min-height: 0 !important; }
-.wrap { min-height: 0 !important; }
-
+/* ===== Mobile tweaks ===== */
 @media (max-width: 520px){
+  .hero-left{
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .avatar{
+    width: 140px;
+    height: 140px;
+  }
+
+  .banner-title .line1{ font-size: 28px; }
+  .banner-title .line2{ font-size: 30px; }
+
   .footer::after{ height: 56px; }
 }
