@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Webber;Robinson;;;
+FN:Robinson Webber
+ORG:E.M.E.B. Vila Nova
+TITLE:Professor de Tecnologia e Robótica
+TEL;TYPE=CELL,WHATSAPP:+5551999499191
+EMAIL;TYPE=INTERNET:robinsonwebber@hotmail.com
+URL:https://robinsonwebber.github.io/linkfree/
+NOTE:Contato via Linkfree
+END:VCARD
