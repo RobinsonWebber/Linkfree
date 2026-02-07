@@ -62,7 +62,7 @@ body{
   width: 100%;
   max-width: 520px;
   margin: 0 auto;
-  padding: 0 14px 120px;
+  padding: 0 14px 32px;
 }
 
 /* HERO vira o “cartaz” */
@@ -285,6 +285,11 @@ section#sections,
 .block {
   max-width: 100%;
 }
-* { outline: 1px solid rgba(255,0,0,.35); }
+/* { outline: 1px solid rgba(255,0,0,.35); } */
 
+.hero { height: auto !important; min-height: 0 !important; }
+.wrap { min-height: 0 !important; }
 
+@media (max-width: 520px){
+  .footer::after{ height: 56px; }
+}
