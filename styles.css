@@ -118,8 +118,8 @@ body{
 
 /* Logo acima, centralizado */
 .avatar{
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
   border-radius: 22px;
   background: transparent;
@@ -220,11 +220,15 @@ section#sections{
   margin-top: 2px;
 }
 .texts{ min-width:0; }
-.texts .title, .texts .subtitle{
+.link-left { min-width: 0; }   /* tu já tem, ótimo */
+.texts { min-width: 0; flex: 1; }  /* ADICIONA flex:1 */
+
+.texts .title, 
+.texts .subtitle{
   white-space: nowrap;
-  overflow:hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 62vw;
+  max-width: 100%;   /* em vez de 62vw */
 }
 
 .pill{
@@ -267,4 +271,5 @@ section#sections{
 .ico svg{ width:22px; height:22px; display:block; }
 
 .ico svg path{ fill: currentColor; }
+
 
