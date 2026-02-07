@@ -59,8 +59,9 @@ body{
 
 /* Wrapper */
 .wrap{
-  width:min(520px, 100%);  /* estilo “cartaz” mais estreito */
-  margin:0 auto;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
   padding: 0 14px 120px;
 }
 
@@ -271,5 +272,12 @@ section#sections{
 .ico svg{ width:22px; height:22px; display:block; }
 
 .ico svg path{ fill: currentColor; }
+.wrap,
+.hero,
+.card,
+section#sections,
+.block {
+  max-width: 100%;
+}
 
 
