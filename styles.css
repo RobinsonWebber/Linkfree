@@ -1,3 +1,7 @@
+{ box-sizing: border-box; }
+html, body { width: 100%; margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+
 :root{
   /* Base igual ao banner */
   --bg: #dff3ff;
@@ -256,4 +260,5 @@ section#sections{
 .link .ico{ color:#0a78c6; }
 
 .ico svg{ width:22px; height:22px; display:block; }
+
 .ico svg path{ fill: currentColor; }
