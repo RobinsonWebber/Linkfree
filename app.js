@@ -142,6 +142,7 @@
       const a = document.createElement("a");
         a.className = "link";
         a.href = l.url;
+        a.target = "_self"
         
         const isVcf = /\.vcf(\?|#|$)/i.test(l.url);
         
@@ -206,5 +207,6 @@
     sectionsWrap.appendChild(block);
   });
 })();
+
 
 
