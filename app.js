@@ -105,9 +105,11 @@
 
   const line1 = document.querySelector(".banner-title .line1");
   const line2 = document.querySelector(".banner-title .line2");
+  const line3 = document.querySelector(".banner-title .line3");
 
-  if (line1) line1.textContent = p.bannerLine1 || "Prof: Robinson";
-  if (line2) line2.textContent = p.bannerLine2 || "Informática";
+  if (line1) line1.textContent = p.bannerLine1 || "nome";
+  if (line2) line2.textContent = p.bannerLine2 || "profissão";
+  if (line3) line3.textContent = p.bannerLine3 || "profissão";
 
   // Footer text (se existir no teu HTML)
   const footerText = document.getElementById("footerText");
@@ -204,4 +206,5 @@
     sectionsWrap.appendChild(block);
   });
 })();
+
 
