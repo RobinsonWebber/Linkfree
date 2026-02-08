@@ -226,8 +226,8 @@ section#sections{
   margin-top: 0;
   text-align:center;
   color: rgba(11,27,43,.70);
-  padding: 6px 6px 0;
-}
+  padding: 8px 6px 110px;
+  }
 
 .footer::after{
   content:"";
