@@ -9,6 +9,7 @@ window.LINKHUB = {
     footerText: "© " + new Date().getFullYear() + " Robinson Webber",
     bannerLine1: "Prof. Robinson",
     bannerLine2: "Informática",
+    bannerLine3: "Professor entusiasta da tecnologia, apaixonado por educação, inovação, programação e robótica."
   },
 
   sections: [
@@ -43,5 +44,6 @@ window.LINKHUB = {
     }
   ]
 };
+
 
 
