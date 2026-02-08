@@ -17,7 +17,7 @@ window.LINKHUB = {
       title: "Contatos",
       links: [
         { title: "WhatsApp", subtitle: "Fala comigo direto", url: "https://wa.me/5551999499191", iconKey: "whatsapp" },
-        { title: "Salvar contato", subtitle: "Adicionar na agenda (VCF)", url: "./contato.vcf", iconKey: "cv", tag: "novo" },
+        { title: "Salvar contato", subtitle: "Adicionar na agenda", url: "./contato.vcf", iconKey: "cv", tag: "novo", target: "_self"},
         { title: "E-mail", subtitle: "Propostas e parcerias", url: "mailto:robinsonwebber@hotmail.com", iconKey: "email" }
       ]
     },
@@ -44,6 +44,7 @@ window.LINKHUB = {
     }
   ]
 };
+
 
 
 
